@@ -6,7 +6,15 @@ module ApplicationHelper
   def scrape
     url = "http://www.drumwolf.com"
     data = Nokogiri::HTML(open(url))
-	data.css("li")[1]
+	li_data = data.css("li")
+	li_data.map { |item| "#{item} <p>" }.join("").html_safe
+  end
+
+  def get_hartl_chapters
+  	url = "http://ruby.railstutorial.org/ruby-on-rails-tutorial-book"
+    data = Nokogiri::HTML(open(url))
+	link_data = data.css("li.chapter > a")
+	link_data.map { |item| item.attr('href') }
   end
 
 end
