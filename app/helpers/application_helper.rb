@@ -3,18 +3,16 @@ module ApplicationHelper
   # open-uri is part of the standard library and allows you to download a webpage
   require 'open-uri'
 
-  def scrape
-    url = "http://www.drumwolf.com"
+  def get_hartl_chapter_links
+    url = "http://ruby.railstutorial.org/ruby-on-rails-tutorial-book"
     data = Nokogiri::HTML(open(url))
-	li_data = data.css("li")
-	li_data.map { |item| "#{item} <p>" }.join("").html_safe
+    @links = data.css("li.chapter > a")
+    @link_html = @links.map { |item| item.attr('href') }
   end
 
-  def get_hartl_chapters
-  	url = "http://ruby.railstutorial.org/ruby-on-rails-tutorial-book"
-    data = Nokogiri::HTML(open(url))
-	link_data = data.css("li.chapter > a")
-	link_data.map { |item| item.attr('href') }
+  def print_hartl_chapter_links
+    @url_array = get_hartl_chapter_links
+    @url_array.each_with_index.map{ |x,i| "<a href='#{x}'>Chapter #{i}</a><br />" }.join().to_s.html_safe
   end
 
 end

@@ -1,5 +1,6 @@
 Scrape::Application.routes.draw do
   root to: "home#index"
+  get '/:url' => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
