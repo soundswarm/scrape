@@ -16,14 +16,15 @@ module ApplicationHelper
   end
 
   def print_ror(url)
-    url = "http://ruby.railstutorial.org/#{url}"
-    data = Nokogiri::HTML(open(url))
-    @links = data.css(".codelisting").to_s.html_safe
+    #url = "http://ruby.railstutorial.org/#{url}"
+    #data = Nokogiri::HTML(open(url))
+    #@links = data.css("#book > .codelisting").to_s.html_safe
   end
 
   def print_terminal(url)
     url = "http://ruby.railstutorial.org/#{url}"
     data = Nokogiri::HTML(open(url))
-    @links = data.css(".code").to_s.html_safe
+    @links = data.css("#book > .code, #book > .codelisting")
+    @links.shift.to_s.html_safe
   end
 end
