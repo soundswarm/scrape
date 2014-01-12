@@ -1,0 +1,12 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.code {
+	margin: 1em 0;
+	.highlight {
+		border: 1px solid #999;
+		background: #eee;
+		padding: 0.25em 1em;
+	}
+}
