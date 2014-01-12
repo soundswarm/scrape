@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	font-family:georgia,times new roman;
+}
+
 .code {
 	margin: 1em 0;
 	.highlight {
@@ -9,9 +13,4 @@
 		background: #eee;
 		padding: 0.25em 1em;
 	}
-}
-
-.terminal, .ror {
-	float: left;
-	width: 50%;
 }
