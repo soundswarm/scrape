@@ -1,4 +1,7 @@
 Scrape::Application.routes.draw do
+  get "photos/main" # is this line necessary?
+  match '/photo', to: "photos#main", via: 'get'
+
   root to: "home#index"
   get '/:url' => "home#index"
 
