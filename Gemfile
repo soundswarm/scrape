@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
+group :development do
   gem 'sqlite3'
 end
 
@@ -29,7 +29,14 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :doc do
+  gem 'sdoc', '0.3.20', require: false
+end
+
 gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
