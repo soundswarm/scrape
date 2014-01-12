@@ -15,15 +15,12 @@ module ApplicationHelper
     @url_array.each_with_index.map{ |x,i| "<a href='#{x}'>Chapter #{i+1}</a><br />" }.join().to_s.html_safe
   end
 
-  def print_ror(url)
+  def print_hartl_chapter(url)
     url = "http://ruby.railstutorial.org/#{url}"
     data = Nokogiri::HTML(open(url))
-    @links = data.css(".codelisting").to_s.html_safe
+    @header = data.css("h1.chapter").to_s.html_safe
+    @links = data.css("#book > .code, #book > .codelisting").to_s.html_safe
+    @header + @links
   end
 
-  def print_terminal(url)
-    url = "http://ruby.railstutorial.org/#{url}"
-    data = Nokogiri::HTML(open(url))
-    @links = data.css(".code").to_s.html_safe
-  end
 end
