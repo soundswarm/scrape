@@ -12,5 +12,14 @@ body {
 		border: 1px solid #999;
 		background: #eee;
 		padding: 0.25em 1em;
+		width:640px;
+	}
+}
+
+.codelisting {
+	padding-top:1.25em;
+	.header {
+		font-weight:bold;
+		display:block;
 	}
 }
