@@ -19,7 +19,7 @@ module ApplicationHelper
     url = "http://ruby.railstutorial.org/#{url}"
     data = Nokogiri::HTML(open(url))
     @header = data.css("h1.chapter").to_s.html_safe
-    @links = data.css("#book > .code, #book > .codelisting").to_s.html_safe
+    @links = data.xpath("//div[@id='book']/div[@class='code' or @class='codelisting']").to_s.html_safe
     @header + @links
   end
 
