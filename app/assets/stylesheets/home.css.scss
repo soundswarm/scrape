@@ -19,6 +19,8 @@ body {
 /***** header *****/
 
 header {
+	background-color:#000;
+	color:#fff;
 	position:fixed;
 	top: 0;
 	width:100%;
@@ -71,12 +73,16 @@ header {
 
 /***** code from michael hartl's railstutorial site *****/
 
+h1.chapter {
+	padding:25px 0 10px;
+}
+
 .code {
-	margin: 1em 15px;
+	margin: 1em 0x;
 	.highlight {
 		border: 1px solid #999;
 		padding: 0.25em 1em;
-		width:640px;
+		width:670px;
 	}
 }
 
@@ -99,9 +105,4 @@ header {
 			background: #ddf;
 		}
 	}
-}
-
-header {
-	background-color:#000;
-	color:#fff;
 }
