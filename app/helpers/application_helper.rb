@@ -12,7 +12,7 @@ module ApplicationHelper
 
   def print_hartl_chapter_links
     @url_array = get_hartl_chapter_links
-    @url_array.each_with_index.map{ |x,i| "<a href='#{x}'>Chapter #{i+1}</a><br />" }.join().to_s.html_safe
+    @url_array.each_with_index.map{ |x,i| "<li><a href='#{x}'>Chapter #{i+1}</a></li>" }.join().to_s.html_safe
   end
 
   def print_hartl_chapter(url)

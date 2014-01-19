@@ -2,15 +2,107 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/***** general styles *****/
+
 body {
-	font-family:georgia,times new roman;
+	margin:0; padding:0;
+	font-family:georgia;
+	margin-top:60px;
+}
+
+.container {
+	width: 700px;
+	margin: 0 auto;
+	position:relative;
+}
+
+/***** header *****/
+
+header {
+	background-color:#000;
+	color:#fff;
+	position:fixed;
+	top: 0;
+	width:100%;
+	min-height:60px;
+	z-index:100;
+	.topnav {
+		cursor:pointer;
+		display:block;
+		border-bottom:1px solid #333;
+		h1 {
+			font-size:24px;
+		}
+		.toggle-menu {
+			background-color:#ccf;
+			border-radius:3px;
+			display:block;
+			width:30px; height:27px;
+			position:absolute;
+			top:0;right:0;
+			text-align:center;
+			span {
+				background-color:#333;
+				border-radius:2px;
+				display:block;
+				margin:0 auto 3px;
+				width:18px; height:3px;
+			}
+			span:first-child {
+				margin-top:6px;
+			}
+		}
+	}
+	ul {
+		list-style:none;
+		margin:0;
+		padding:5px 0;
+		display:none;
+		overflow:hidden;
+		li {
+			float:left;
+			width: 110px;
+			padding:3px 0;
+		}
+	}
+	a {
+		color:#ccf;
+		text-decoration:none;
+	}
+}
+
+/***** code from michael hartl's railstutorial site *****/
+
+h1.chapter {
+	padding:25px 0 10px;
 }
 
 .code {
-	margin: 1em 0;
+	margin: 1em 0x;
 	.highlight {
 		border: 1px solid #999;
-		background: #eee;
 		padding: 0.25em 1em;
+		width:670px;
+	}
+}
+
+.codelisting {
+	padding-top:1.25em;
+	.header {
+		font-weight:bold;
+		display:block;
+	}
+}
+
+#body > .code {
+	.highlight {
+		background:#eee;
+	}
+}
+#body > .codelisting {
+	.code {
+		.highlight {
+			background: #ddf;
+		}
 	}
 }
