@@ -31,10 +31,11 @@ header {
 		display:block;
 		border-bottom:1px solid #333;
 		h1 {
-			font-size:24px;
+			font-size:23px;
+			line-height:30px;
 		}
 		.toggle-menu {
-			background-color:#ccf;
+			background-color:#fdd;
 			border-radius:3px;
 			display:block;
 			width:30px; height:27px;
@@ -51,6 +52,9 @@ header {
 			span:first-child {
 				margin-top:6px;
 			}
+			&:hover {
+				background-color:red;
+			}
 		}
 	}
 	ul {
@@ -66,7 +70,7 @@ header {
 		}
 	}
 	a {
-		color:#ccf;
+		color:#fdd;
 		text-decoration:none;
 	}
 }
@@ -75,9 +79,9 @@ header {
 
 a {
 	text-decoration:none;
-	color:#339;
+	color:#933;
 	&:hover {
-		color:blue;
+		color:red;
 	}
 }
 
@@ -121,7 +125,7 @@ h2 {
 #body > .codelisting {
 	.code {
 		.highlight {
-			background: #ddf;
+			background: #fdd;
 		}
 	}
 }
