@@ -18,9 +18,11 @@ module ApplicationHelper
   def print_hartl_chapter(url)
     url = "http://ruby.railstutorial.org/#{url}"
     data = Nokogiri::HTML(open(url))
-    @header = data.css("h1.chapter").to_s.html_safe
-    @links = data.xpath("//div[@id='book']/div[@class='code' or @class='codelisting']").to_s.html_safe
-    @header + @links
+    @header = data.css("h1.chapter")
+    @links = data.xpath("//div[@id='book']/*[@class='code' or @class='codelisting' or self::h2[not(@class)]]")
+    @links.shift
+    @links.shift
+    @header.to_s.html_safe + @links.to_s.html_safe
   end
 
 end
