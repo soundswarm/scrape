@@ -19,10 +19,16 @@ module ApplicationHelper
     url = "http://ruby.railstutorial.org/#{url}"
     data = Nokogiri::HTML(open(url))
     @header = data.css("h1.chapter")
-    @links = data.xpath("//div[@id='book']/*[@class='code' or @class='codelisting' or self::h2[not(@class)]]")
+    @links = data.xpath("//div[@id='book']/*[@class='code' or @class='codelisting' or @class='label' or self::h2[not(@class)]]")
     @links.shift
     @links.shift
     @header.to_s.html_safe + @links.to_s.html_safe
+  end
+
+  def print_table_of_contents
+    url = "http://ruby.railstutorial.org/ruby-on-rails-tutorial-book"
+    data = Nokogiri::HTML(open(url))
+    @links = data.css("#table_of_contents").to_s.html_safe
   end
 
 end

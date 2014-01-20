@@ -39,7 +39,8 @@ header {
 		display:block;
 		border-bottom:1px solid #333;
 		h1 {
-			font-size:23px;
+			font-size:25px;
+			font-family:"helvetica neue",arial;
 			line-height:30px;
 			a {
 				color:#fff;
@@ -140,6 +141,16 @@ h2 {
 	.code {
 		.highlight {
 			background: #fdd;
+		}
+	}
+}
+
+#table_of_contents {
+	ul, ol {
+		list-style:none;
+		li.chapter {
+			font-weight:bold;
+			margin-top:1em;
 		}
 	}
 }
