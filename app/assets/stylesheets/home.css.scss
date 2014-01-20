@@ -73,8 +73,27 @@ header {
 
 /***** code from michael hartl's railstutorial site *****/
 
+a {
+	text-decoration:none;
+	color:blue;
+	&:hover {
+		color:#ccf;
+	}
+}
+
 h1.chapter {
+	font-size:22px;
 	padding:25px 0 10px;
+	span {
+		display:block;
+		font-size:36px;
+	}
+}
+
+h2 {
+	font-size:22px;
+	padding-top:2em;
+	border-top:#ccc 1px dotted;
 }
 
 .code {
