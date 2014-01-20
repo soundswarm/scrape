@@ -1,3 +1,7 @@
 <div id="body" class="container">
-	<%= print_hartl_chapter(@url) %>
+	<% if @url %>
+		<%= print_hartl_chapter(@url) %>
+	<% else %>
+		<%= print_table_of_contents %>
+	<% end %>
 </div>

@@ -144,3 +144,13 @@ h2 {
 		}
 	}
 }
+
+#table_of_contents {
+	ul, ol {
+		list-style:none;
+		li.chapter {
+			font-weight:bold;
+			margin-top:1em;
+		}
+	}
+}
